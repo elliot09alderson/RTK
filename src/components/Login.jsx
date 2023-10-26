@@ -4,13 +4,15 @@ import { login, logout } from "../reducers/AuthSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
-  const { user } = useSelector((state) => state);
-  console.log(user);
+  // accessing the state using use-selector
+  //   universal_state.reducerName.initalized_state_obj.Initial_State_value
+  const value = useSelector((state) => state.user.value.username);
+  console.log(value);
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   return (
     <div>
-      <h1>THIS is the Login Page</h1>   
+      <h1>THIS is the Login Page</h1>
       <input
         type="text"
         value={name}
